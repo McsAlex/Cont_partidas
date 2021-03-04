@@ -2523,9 +2523,106 @@ extern __bank0 __bit __timeout;
 #pragma config WRT = OFF
 # 10 "main.c" 2
 
+# 1 "./botoes.h" 1
+
+
+
+void botoes_init (void);
+char b1 (void);
+char b0 (void);
+# 11 "main.c" 2
+
+# 1 "./contatores.h" 1
+
+
+
+void contatores_init (void);
+void K1 (char estado);
+void K2 (int estado);
+void K3 (int estado);
+int K1status ( void );
+# 12 "main.c" 2
+
+# 1 "./disp7seg.h" 1
+
+
+
+void disp7seg_init( void );
+
+void display7seg(int c);
+# 13 "main.c" 2
+
+# 1 "./delay.h" 1
+
+
+
+void delay (unsigned int t);
+# 14 "main.c" 2
+
 
 void main(void)
-
 {
-    return;
+    int cont = 0;
+    int estado = 0;
+    int t;
+
+    while ( 1 )
+    {
+        switch ( estado )
+        {
+            case 0:
+                    estado = 1;
+                    break;
+            case 1:
+                    contatores_init();
+                    botoes_init();
+                    disp7seg_init();
+                    estado = 2;
+                    break;
+            case 2:
+                    if ( b1() == 1 && K1status() == 0 )
+                        estado = 3;
+                    break;
+            case 3:
+                    K1(1);
+                    K2(1);
+                    K3(0);
+                    estado = 4;
+                    break;
+            case 4:
+                    t = 3000;
+                    estado = 6;
+                    break;
+            case 6:
+                    delay (1);
+                    --t;
+                    if (t <= 0 )
+                        estado = 7;
+                    if( b0() == 1 )
+                        estado = 9;
+                    break;
+            case 7:
+                    ++cont;
+                    estado = 8;
+                    break;
+            case 8:
+                    K1(1);
+                    K2(0);
+                    K3(1);
+                    if( b0() == 1 )
+                        estado = 9;
+                    break;
+            case 9:
+                    K1(0);
+                    K2(0);
+                    K3(0);
+                    estado = 2;
+                    break;
+        }
+        display7seg(cont);
+
+        if ( cont >= 10)
+            cont = 0;
+
+    }
 }

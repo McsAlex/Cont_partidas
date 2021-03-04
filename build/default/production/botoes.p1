@@ -289,3 +289,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;botoes.c: 19: }
 [e :UE 139 ]
 }
+"20
+[; ;botoes.c: 20: char b0 (void)
+[v _b0 `(uc ~T0 @X0 1 ef ]
+"21
+[; ;botoes.c: 21: {
+{
+[e :U _b0 ]
+[f ]
+"22
+[; ;botoes.c: 22:     return (PORTDbits.RD0);
+[e ) -> . . _PORTDbits 0 0 `uc ]
+[e $UE 140  ]
+"23
+[; ;botoes.c: 23: }
+[e :UE 140 ]
+}

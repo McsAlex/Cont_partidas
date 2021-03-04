@@ -1,4 +1,4 @@
-# 1 "botoes.c"
+# 1 "disp7seg.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "botoes.c" 2
+# 1 "disp7seg.c" 2
 
 
 
@@ -2499,19 +2499,43 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "botoes.c" 2
+# 9 "disp7seg.c" 2
+
+# 1 "./config.h" 1
 
 
-void botoes_init (void)
+
+
+
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = ON
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+# 10 "disp7seg.c" 2
+
+
+char vetor[16] = { 0x3F, 0x06, 0x5B, 0x4F,
+                            0x66, 0x6D, 0x7D, 0x07,
+                            0x7F, 0x6F, 0x77, 0x7C,
+                            0x39, 0x5E, 0x79, 0x71 };
+
+void disp7seg_init( void )
 {
-    TRISDbits.TRISD0 = 1;
-    TRISDbits.TRISD1 = 1;
+    ANSELH = 0;
+    TRISB = 0x00;
+    PORTB = 0x00;
 }
-char b1 (void)
+void display7seg(int c)
 {
-    return (PORTDbits.RD1);
-}
-char b0 (void)
-{
-    return (PORTDbits.RD0);
+    PORTB = vetor[c];
 }

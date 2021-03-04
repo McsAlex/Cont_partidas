@@ -3,6 +3,12 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 6 ]
+"11 Z:\Programação - José\Cont_part.X\botoes.c
+[v _botoes_init botoes_init `(v  1 e 1 0 ]
+"16
+[v _b1 b1 `(uc  1 e 1 0 ]
+"20
+[v _b0 b0 `(uc  1 e 1 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
@@ -11,9 +17,27 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"12 Z:\Programação - José\Cont_part.X\main.c
+"12 Z:\Programação - José\Cont_part.X\contatores.c
+[v _contatores_init contatores_init `(v  1 e 1 0 ]
+"22
+[v _K1 K1 `(v  1 e 1 0 ]
+"26
+[v _K2 K2 `(v  1 e 1 0 ]
+"31
+[v _K3 K3 `(v  1 e 1 0 ]
+"35
+[v _K1status K1status `(i  1 e 2 0 ]
+"12 Z:\Programação - José\Cont_part.X\delay.c
+[v _delay delay `(v  1 e 1 0 ]
+"17 Z:\Programação - José\Cont_part.X\disp7seg.c
+[v _disp7seg_init disp7seg_init `(v  1 e 1 0 ]
+"23
+[v _display7seg display7seg `(v  1 e 1 0 ]
+"16 Z:\Programação - José\Cont_part.X\main.c
 [v _main main `(v  1 e 1 0 ]
-[s S48 . 1 `uc 1 RD0 1 0 :1:0 
+"228 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S100 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -22,10 +46,12 @@
 `uc 1 RD6 1 0 :1:6 
 `uc 1 RD7 1 0 :1:7 
 ]
-"369 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[u S57 . 1 `S48 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES57  1 e 1 @8 ]
-[s S27 . 1 `uc 1 TRISD0 1 0 :1:0 
+"369
+[u S109 . 1 `S100 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES109  1 e 1 @8 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S79 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -35,10 +61,83 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S36 . 1 `S27 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES36  1 e 1 @136 ]
-"12 Z:\Programação - José\Cont_part.X\main.c
+[u S88 . 1 `S79 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES88  1 e 1 @136 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"12 Z:\Programação - José\Cont_part.X\disp7seg.c
+[v _vetor vetor `[16]uc  1 e 16 0 ]
+"16 Z:\Programação - José\Cont_part.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
+"19
+[v main@estado estado `i  1 a 2 8 ]
+"18
+[v main@cont cont `i  1 a 2 6 ]
+"20
+[v main@t t `i  1 a 2 4 ]
+"81
+} 0
+"23 Z:\Programação - José\Cont_part.X\disp7seg.c
+[v _display7seg display7seg `(v  1 e 1 0 ]
+{
+[v display7seg@c c `i  1 p 2 0 ]
+"26
+} 0
+"17
+[v _disp7seg_init disp7seg_init `(v  1 e 1 0 ]
+{
+"22
+} 0
+"12 Z:\Programação - José\Cont_part.X\delay.c
+[v _delay delay `(v  1 e 1 0 ]
+{
+[v delay@t t `ui  1 p 2 0 ]
+"20
+} 0
+"12 Z:\Programação - José\Cont_part.X\contatores.c
+[v _contatores_init contatores_init `(v  1 e 1 0 ]
+{
+"21
+} 0
+"11 Z:\Programação - José\Cont_part.X\botoes.c
+[v _botoes_init botoes_init `(v  1 e 1 0 ]
+{
+"15
+} 0
 "16
+[v _b1 b1 `(uc  1 e 1 0 ]
+{
+"19
+} 0
+"20
+[v _b0 b0 `(uc  1 e 1 0 ]
+{
+"23
+} 0
+"31 Z:\Programação - José\Cont_part.X\contatores.c
+[v _K3 K3 `(v  1 e 1 0 ]
+{
+[v K3@estado estado `i  1 p 2 0 ]
+"34
+} 0
+"26
+[v _K2 K2 `(v  1 e 1 0 ]
+{
+[v K2@estado estado `i  1 p 2 0 ]
+"29
+} 0
+"35
+[v _K1status K1status `(i  1 e 2 0 ]
+{
+"38
+} 0
+"22
+[v _K1 K1 `(v  1 e 1 0 ]
+{
+[v K1@estado estado `uc  1 a 1 wreg ]
+[v K1@estado estado `uc  1 a 1 wreg ]
+"24
+[v K1@estado estado `uc  1 a 1 0 ]
+"25
 } 0

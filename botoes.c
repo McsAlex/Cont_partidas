@@ -17,3 +17,7 @@ char b1 (void)
 {
     return (PORTDbits.RD1);
 }
+char b0 (void)
+{
+    return (PORTDbits.RD0);
+}

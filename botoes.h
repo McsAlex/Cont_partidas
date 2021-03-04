@@ -3,5 +3,6 @@
 
 void botoes_init (void);
 char b1 (void);
+char b0 (void);
 
 #endif

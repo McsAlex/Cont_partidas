@@ -1,4 +1,4 @@
-# 1 "botoes.c"
+# 1 "delay.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "botoes.c" 2
+# 1 "delay.c" 2
 
 
 
@@ -2499,19 +2499,37 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "botoes.c" 2
+# 9 "delay.c" 2
+
+# 1 "./config.h" 1
 
 
-void botoes_init (void)
+
+
+
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = ON
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+# 10 "delay.c" 2
+
+
+void delay (unsigned int t)
+
 {
-    TRISDbits.TRISD0 = 1;
-    TRISDbits.TRISD1 = 1;
-}
-char b1 (void)
-{
-    return (PORTDbits.RD1);
-}
-char b0 (void)
-{
-    return (PORTDbits.RD0);
+    while (t)
+    {
+        --t;
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+    }
 }
