@@ -2549,5 +2549,5 @@ void K3 (int estado)
 }
 int K1status (void)
 {
-    return (PORTDbits.RD7);
+    return (PORTDbits.RD7) ;
 }

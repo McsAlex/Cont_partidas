@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Thu Mar 04 15:55:46 2021
+                                                                                               Thu Mar 04 15:56:50 2021
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1  0000                     
@@ -1153,7 +1153,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1091                           __CFG_BOR4V$BOR40V equ 0x0
   1092  0000                     global __CFG_WRT$OFF
   1093                           __CFG_WRT$OFF equ 0x0
-  1094  0000                     	file	"C:\Users\19179453\AppData\Local\Temp\s18o."
+  1094  0000                     	file	"C:\Users\19179453\AppData\Local\Temp\s6s0."
   1095                           	line	#
   1096                           psect cinit,class=CODE,delta=2
   1097                           global start_initialization
@@ -1169,7 +1169,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   1107                           _vetor:
   1108  0020                            ds      16
   1109  0020                     
-  1110                           	file	"C:\Users\19179453\AppData\Local\Temp\s18o."
+  1110                           	file	"C:\Users\19179453\AppData\Local\Temp\s6s0."
   1111                           	line	#
   1112                           global btemp
   1113                           psect inittext,class=CODE,delta=2
@@ -2619,7 +2619,7 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
   2553                           	line	37
   2554                           	
   2555                           l793:	
-  2556  0689                     ;contatores.c: 37:     return (PORTDbits.RD7);
+  2556  0689                     ;contatores.c: 37:     return (PORTDbits.RD7) ;
   2557                           	bcf	status, 5	;RP0=0, select bank0
   2558  0689  1283               	bcf	status, 6	;RP1=0, select bank0
   2559  068A  1303               	rlf	(8),w	;volatile
@@ -2853,7 +2853,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Thu Mar 04 15:55:46 2021
+Symbol Table                                                                                   Thu Mar 04 15:56:50 2021
 
             ?_display7seg 0070                         pc 0002               __CFG_CP$OFF 0000  
                       _K1 0662                        _K2 0652                        _K3 065A  

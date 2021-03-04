@@ -378,7 +378,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _K1status ]
 [f ]
 "37
-[; ;contatores.c: 37:     return (PORTDbits.RD7);
+[; ;contatores.c: 37:     return (PORTDbits.RD7) ;
 [e ) -> . . _PORTDbits 0 7 `i ]
 [e $UE 142  ]
 "38
